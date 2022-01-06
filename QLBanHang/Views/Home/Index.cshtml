@@ -1,0 +1,21 @@
+﻿@model IEnumerable<QLBanHang.Models.SanPham>
+@using QLBanHang.Models
+@using (Html.BeginForm())
+{ 
+ <p></p>
+    <div class="form-group form-inline" >
+        Tìm sản phẩm: @Html.TextBox("SearchString", "", new { @class="form-control"})
+        <input type="submit" value="Tim" class="btn btn-primary"/>
+    </div>
+}
+<div class="row">
+    @foreach(var item in Model)
+    {
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="text-align: center; background-color:azure; border: 1px solid green;">
+        <h3>@Html.DisplayFor(m => item.TenSP)</h3>
+        @Html.Image("../" + item.HinhSP, "60", "100", "")<br />
+        @Html.DisplayFor(m => item.Dongia)<br />
+        <a class="btn btn-info" href="@Url.Action("Details", "SanPhams", new {id=item.MaSP })">Xem chi tiết</a>
+    </div>
+    }
+</div>

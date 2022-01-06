@@ -1,0 +1,64 @@
+﻿@model QLBanHang.Models.SanPham
+@using QLBanHang.Models;
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Donvitinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donvitinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dongia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dongia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiSP.TenLoaiSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiSP.TenLoaiSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhSP)
+        </dt>
+
+        <dd>
+            @Html.Image("../../" + Model.HinhSP, "120", "150", "")
+        </dd>
+
+
+        <dt>
+           
+        </dt>
+
+        <dd>
+            <pr/>
+            <a class="btn btn-info" href="@Url.Action("AddToCart", "GioHangs", new {MaSP = Model.MaSP})"><span class=" glyphicon glyphicon-shopping-cart""> Add</span></a>
+            <a class="btn btn-info"href="@Url.Action("index", "Home")" >Quay lại</a>
+        </dd>
+
+    </dl>
+</div>
+
